@@ -149,7 +149,8 @@ class Command(BaseCommand):
                 debug.technical_500_response = null_technical_500_response
 
         self.stdout.write("Validating models...\n\n")
-        self.validate(display_num_errors=True)
+        self.check(display_num_errors=True)
+        self.check_migrations()
         self.stdout.write((
             "Django version %(version)s, using settings %(settings)r\n"
             "Running django-devserver %(devserver_version)s\n"
